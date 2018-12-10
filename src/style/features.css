@@ -1,0 +1,48 @@
+/* FEATURES START */
+
+#arsenicChoice {
+    font-family: 'Didact Gothic', sans-serif;
+    color: rgb(214, 214, 214)!important;
+    margin-bottom: 75px;
+}
+
+#arsenicChoice img {
+    width: 300px;
+    height: 300px;
+}
+
+.arsenicHeader {
+    display: flex;
+    text-align: center;
+    font-weight: 800;
+    color: black;
+    letter-spacing: 3px;
+    border-bottom: solid 2px black;
+    position: relative;
+}
+
+.cardArChoice {
+    display: -ms-flexbox !important;
+    display: flex !important;
+    -ms-flex-pack: center !important;
+    justify-content: center !important;
+    padding: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.cardArChoice:hover .choiceInfo{
+    bottom: 5%;
+}
+
+.choiceInfo{
+	width: 290px;
+	height: 290px;
+	background: rgba(0, 0, 0, 0.4);
+	padding: 20px;
+	margin: 0 auto;
+	bottom: -100%;
+	position: absolute;
+    transition: .5s;
+}
+/* FEATURES END */

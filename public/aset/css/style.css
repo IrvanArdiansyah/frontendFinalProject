@@ -1,0 +1,202 @@
+/* NAVBAR START */
+header {
+    font-family: 'Didact Gothic', sans-serif;
+}
+
+/* === JQU -> SCRIPT NAVBAR ===  */
+
+nav {
+    transition: .5s;
+}
+
+.navScroll {
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: .5s;
+}
+
+/* === JQU -> SCRIPT NAVBAR ===  */
+
+.nav-link {
+    color: rgb(214, 214, 214)!important;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
+
+.nav-link:hover {
+    color: rgb(245, 150, 60)!important;
+    transform: translateX(1px) translateY(-1px) !important
+}
+
+@media (min-width: 992px) {
+    .navbar-brand {
+        display: inline-block;
+        padding-top: 0.3125rem;
+        padding-bottom: 0.3125rem;
+        margin-right: 1rem;
+        font-size: 1.25rem;
+        line-height: inherit;
+        white-space: nowrap;
+        padding-right: 3rem !important;
+        padding-left: 3rem !important;
+    }
+}
+/* NAVBAR END */
+
+/* JUMBOTRON START */
+
+#intro {
+    font-family: 'Didact Gothic', sans-serif;
+    position: relative;
+    background-position: top;
+    z-index: -1;
+    width: 100%;
+    min-height: 100vh;
+    margin-bottom: 75px;
+}
+
+.jumbotron {
+    background: url('../img/Process-Shot_Beveling-the-edges-Oakmoon-Crafts-Dash-Kadam-FUSSY-Singapore-fussysg.jpg') no-repeat center center;
+	background-position: relative;
+	background-size: cover;
+	background-repeat: no-repeat;
+    height: 100vh;
+    border-radius: 0px;
+    opacity: .9;
+}
+
+/* JUMBOTRON END */
+
+/* FEATURES START */
+
+#arsenicChoice {
+    font-family: 'Didact Gothic', sans-serif;
+    color: rgb(214, 214, 214)!important;
+    margin-bottom: 75px;
+}
+
+#arsenicChoice img {
+    width: 300px;
+    height: 300px;
+}
+
+.arsenicHeader {
+    display: flex;
+    text-align: center;
+    font-weight: 800;
+    color: black;
+    letter-spacing: 3px;
+    border-bottom: solid 2px black;
+    position: relative;
+}
+
+.cardArChoice {
+    display: -ms-flexbox !important;
+    display: flex !important;
+    -ms-flex-pack: center !important;
+    justify-content: center !important;
+    padding: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.cardArChoice:hover .choiceInfo{
+    bottom: 5%;
+}
+
+.choiceInfo{
+	width: 290px;
+	height: 290px;
+	background: rgba(0, 0, 0, 0.4);
+	padding: 20px;
+	margin: 0 auto;
+	bottom: -100%;
+	position: absolute;
+    transition: .5s;
+}
+/* FEATURES END */
+
+/* SALES START */
+#arsenicSales {
+    font-family: 'Didact Gothic', sans-serif;
+    font-weight: 900;
+    color: rgb(165, 0, 0)!important;
+    letter-spacing: 3px;
+    margin-bottom: 75px;
+    text-align: center;
+}
+
+#arsenicSales img {
+    width: 325px;
+    height: 180px;
+}
+
+.cardArSale {
+    display: -ms-flexbox !important;
+    display: flex !important;
+    -ms-flex-pack: center !important;
+    justify-content: center !important;
+    padding: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.cardArSale:hover img {
+    opacity: .7;
+    border: solid 10px rgb(245, 150, 60);
+}
+
+.saleInfo{
+	padding: 20px;
+	margin: 0 auto;
+	position: absolute;
+    transition: .5s;
+}
+/* SALES END */
+
+/* ARTICLE START */
+#article {
+font-family: 'Didact Gothic', sans-serif;
+color: rgb(160, 160, 160)!important;
+text-align: justify;
+margin-bottom: 75px;
+}
+
+#article p{
+    font-family: 'Didact Gothic', sans-serif;
+    color: rgb(160, 160, 160)!important;
+    text-align: justify;
+    font-size: 13px;
+    }
+/* ARTICLE END */
+
+/* FOOTER START */
+#footer {
+    font-family: 'Didact Gothic', sans-serif;
+    color: rgb(231, 231, 231)!important;
+    padding: 20px;
+}
+
+#footer li {
+    list-style: none;
+}
+
+#footer a {
+   color: rgb(231, 231, 231);
+}
+
+#footer a:hover {
+    color: rgb(245, 150, 60);
+    text-decoration: none;
+    /* transform: translateX(4px) translateY(-4px) !important */
+ }
+
+.parallax {
+    background-image: url(../img/Footer/IMG_0024.jpg);
+    width: 100%; 
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: .9;
+}
+/* FOOTER END */    

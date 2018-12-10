@@ -1,0 +1,15 @@
+/* ARTICLE START */
+#article {
+    font-family: 'Didact Gothic', sans-serif;
+    color: rgb(160, 160, 160)!important;
+    text-align: justify;
+    margin-bottom: 75px;
+    }
+    
+    #article p{
+        font-family: 'Didact Gothic', sans-serif;
+        color: rgb(160, 160, 160)!important;
+        text-align: justify;
+        font-size: 13px;
+        }
+/* ARTICLE END */
