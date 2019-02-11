@@ -1,0 +1,123 @@
+.container-trendingmen {
+    max-width: 100%;
+    margin-right: 25px;
+    margin-left: 25px;
+    margin-top: 37.5px;
+    border: 1px solid #cccccc;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgb(245, 150, 60, 0.5)!important;
+  }
+
+.trending-header {
+  font-family: 'Didact Gothic', sans-serif;
+  color: black !important;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  justify-content: center;
+  padding-top: 25px;
+  padding-bottom: 10px;
+  border-bottom: black solid 2px;
+  margin-right: 75px; 
+  margin-left: 75px; 
+}
+
+h4 {
+  font-weight: 900;
+}
+
+.trendingmen-1 {
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -ms-flex-pack: center !important;
+  justify-content: center !important;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.trendingmen-2 {
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -ms-flex-pack: center !important;
+  justify-content: center !important;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.trendingmen-1 img {
+  height: 400px;
+  border-radius: 10px
+}
+
+.trendingmen-1 img:hover {
+  transform: translateX(1px) translateY(-1px) !important;
+  box-shadow: 0 0 5px rgb(245, 150, 60);
+  opacity: .9;
+}
+
+.trendingmen-2 img {
+  height: 400px;
+  border-radius: 10px
+}
+
+.trendingmen-2 img:hover {
+  transform: translateX(1px) translateY(-1px) !important;
+  box-shadow: 0 0 5px rgb(245, 150, 60);
+  opacity: .9;
+}
+
+@media (min-width: 319px) {
+  .trendingmen-1 img {
+    height: 225px;
+    border-radius: 10px;
+  }
+  .trendingmen-2 img {
+    height: 110px;
+    border-radius: 10px
+  }
+}
+
+@media (min-width: 413px) {
+  .trendingmen-1 img {
+    height: 310px;
+    border-radius: 10px;
+  }
+  .trendingmen-2 img {
+    height: 150px;
+    border-radius: 10px
+  }
+}
+
+@media (min-width: 767px) {
+  .trendingmen-1 img {
+    height: 500px;
+    border-radius: 10px;
+  }
+  .trendingmen-2 img {
+    height: 240px;
+    border-radius: 10px
+  }
+}
+
+@media (min-width: 959px) {
+  .trendingmen-1 img {
+    height: 250px;
+    border-radius: 10px;
+  }
+  .trendingmen-2 img {
+    height: 250px;
+    border-radius: 10px
+  }
+}
+
+@media (min-width: 1025px) {
+  .trendingmen-1 img {
+    height: 400px;
+    border-radius: 10px;
+  }
+  .trendingmen-2 img {
+    height: 400px;
+    border-radius: 10px
+  }
+}

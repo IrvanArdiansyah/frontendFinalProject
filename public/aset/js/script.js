@@ -9,9 +9,9 @@ $(window).on('scroll', function () {
 
 $(window).on('scroll', function () {
     if ($(window).scrollTop()) {
-        $('img#brand').attr('src', '../aset/img/Logo/Arsenic_mono.png');
+        $('img#brand').attr('src', '../aset/img/komponen/navbar/arsenic_mono.png');
     }
     else {
-        $('img#brand').attr('src', '../aset/img/Logo/Arsenic_main.png');
+        $('img#brand').attr('src', '../aset/img/komponen/navbar/arsenic_main.png');
     }
 })

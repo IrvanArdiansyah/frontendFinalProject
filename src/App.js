@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
-import Navbar from './komponen/navbar';
-import Banner from './komponen/banner';
-import Features from './komponen/features';
-import Sales from './komponen/sales';
-import Article from './komponen/article';
-import Footer from './komponen/footer';
+import Navbar from './komponen/navbar/navbar';
+import Routes from './routes/routes';
+import Footer from './komponen/footer/footer';
 
 import './App.css';
 
@@ -12,14 +9,11 @@ import './App.css';
 class App extends Component {
   render() {
     return (
-      <div className="App">
+      <React.Fragment>
         <Navbar />
-        <Banner />
-        <Features />
-        <Sales />
-        <Article />
+        <Routes />
         <Footer />
-      </div>
+      </React.Fragment>
     );
   }
 }

@@ -1,0 +1,61 @@
+.container-categorywomen {
+    max-width: 100%;
+    margin-right: 25px;
+    margin-left: 25px;
+    margin-top: 37.5px;
+    background-image: url(/aset/img/men/categorymen/polygon.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    border-radius: 30px
+  }
+
+.categorywomen-header {
+  font-family: 'Didact Gothic', sans-serif;
+  color: black !important;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-align: center;
+  justify-content: center;
+  padding-top: 25px;
+  padding-bottom: 10px;
+  border-bottom: black solid 2px;
+  margin-right: 75px; 
+  margin-left: 75px; 
+}
+
+.categorywomen-gallery {
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -ms-flex-pack: center !important;
+  justify-content: center !important;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.categorywomen-gallery img {
+  width: 400px;
+  height: 400px;
+  /* border: solid 5px brown; */
+  /* border-radius: 10px */
+}
+
+.categorywomen-info{
+  font-family: 'Didact Gothic', sans-serif;
+  font-weight: 900;
+  color: rgb(245, 150, 60)!important;
+  width: 350px;
+	background: rgba(90, 90, 90, 0.95);
+	padding: 20px;
+  margin: 0 auto;
+	bottom: -100%;
+	position: absolute;
+  border-radius: 10px;
+  transition: .5s;
+  justify-content: center
+}
+
+.categorywomen-gallery:hover .categorywomen-info {
+  bottom: 10%
+}

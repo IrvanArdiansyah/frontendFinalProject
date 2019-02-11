@@ -1,0 +1,32 @@
+.container-details-product {
+    border-radius: 0px;
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-top: 157px;
+    margin-bottom: 37.5px;
+    font-family: 'Didact Gothic', sans-serif;
+}
+
+.legnth-responsive {
+    width: 100px
+}
+
+.btn-success {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    width: 350px;
+}
+
+.pict {
+    display: -ms-flexbox !important;
+    display: flex !important;
+    -ms-flex-pack: center !important;
+    justify-content: center !important;
+    padding: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+p {
+    text-align: justify; 
+}
