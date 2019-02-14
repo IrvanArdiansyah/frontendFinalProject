@@ -56,7 +56,7 @@ export default class Login extends Component {
                         }, 3000)
                     })
                 }
-                console.log(info)
+                // console.log(info.data.result)
             })
             .catch((err) => {
                 console.log(err)
@@ -64,7 +64,6 @@ export default class Login extends Component {
     }
 
     render() {
-        console.log()
         return (
             <React.Fragment>
                 <div className="container login">
@@ -73,7 +72,6 @@ export default class Login extends Component {
                             <h4><span role="img" aria-label="1">🔑</span> Account Log in</h4>
                         </div>
                         <div className="card-body">
-
                             {this.state.show ?
                                 <SweetAlert
                                     show={this.state.show}
@@ -83,7 +81,6 @@ export default class Login extends Component {
                                 /> :
                                 ''
                             }
-
                             <form onSubmit={(e) => { e.preventDefault() }}>
                                 <div className="form-group">
                                     <label htmlFor="inputEmail">Email</label>

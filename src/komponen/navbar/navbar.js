@@ -4,7 +4,27 @@ import './navbar.css';
 
 
 class Navbar extends Component {
+    constructor() {
+        super()
+        this.state = {
+            userData: []
+        }
+    }
+    componentDidMount() {
+        this.setState({
+            userData: JSON.parse(localStorage.getItem('User'))
+        })
+    }
+
+    Logout () {
+        this.setState({
+            userData: ''
+        })
+        localStorage.removeItem('User')
+    }
+
     render() {
+        // console.log(this.state.userData.first_name)
         return (
             <header>
                 <nav className="navbar navbar-expand-xl navbar-light fixed-top">
@@ -50,7 +70,12 @@ class Navbar extends Component {
                                     <Link className="nav-link" to="/Register"><span role="img" aria-label="1">📝</span>Register</Link>
                                 </li>
                                 <li className="nav-item mx-2">
-                                    <Link className="nav-link" to="/Login"><span role="img" aria-label="1">🔑</span>Login</Link>
+                                    {
+                                        localStorage.getItem('User') ?
+                                            <div className="nav-link" to="/" >{this.state.userData.first_name}<Link to="/"><button onClick={this.Logout}>logout</button></Link></div>
+                                            :
+                                            <Link className="nav-link" to="/Login"><span role="img" aria-label="1">🔑</span>Login</Link>
+                                    }
                                 </li>
                             </ul>
                         </div>
