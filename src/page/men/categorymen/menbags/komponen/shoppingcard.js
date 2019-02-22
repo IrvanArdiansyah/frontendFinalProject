@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import './shoppingcard.css'
 export default class ShoppingCard extends Component {
-    // state = {data: ""}
     render() {
         console.log(this.props)
         let products = this.props.menBags.map((val, i) => {

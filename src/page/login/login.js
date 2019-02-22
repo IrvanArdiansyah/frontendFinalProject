@@ -31,17 +31,20 @@ export default class Login extends Component {
         axios.post(url, userLogin)
             .then((info) => {
                 if (info.data.status === "email doesnt exist") {
+                    console.log(info.data)
                     this.setState({
                         show: true,
                         message: "email doesnt exist"
                     })
                 } else if (info.data.status === "password was incorect") {
+                    console.log(info.data)
                     this.setState({
                         show: true,
                         message: "password was incorect"
                     })
                 } else if (info.data.status === "login success") {
                     localStorage.setItem('User', JSON.stringify(info.data.result[0]))
+                    console.log(info.data)
                     this.setState({
                         show: true,
                         message: "login success",
@@ -49,14 +52,12 @@ export default class Login extends Component {
                     }, () => {
                         setTimeout(() => {
                             this.setState({
-                                show: false,
-                                message: ''
+                                show: false
                             })
-                            this.props.history.push("/")
-                        }, 3000)
+                            window.location.href="/"
+                        }, 1250)
                     })
                 }
-                // console.log(info.data.result)
             })
             .catch((err) => {
                 console.log(err)
@@ -77,7 +78,6 @@ export default class Login extends Component {
                                     show={this.state.show}
                                     title="Alert"
                                     text={this.state.message}
-                                    onConfirm={() => this.setState({ show: false })}
                                 /> :
                                 ''
                             }

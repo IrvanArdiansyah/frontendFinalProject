@@ -1,30 +1,35 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './navbar.css';
+import axios from 'axios'
 
 
 class Navbar extends Component {
-    constructor() {
-        super()
-        this.state = {
-            userData: []
-        }
-    }
-    componentDidMount() {
-        this.setState({
-            userData: JSON.parse(localStorage.getItem('User'))
-        })
+
+    state = {
+        cartItems: ''
     }
 
-    Logout () {
-        this.setState({
-            userData: ''
-        })
+    componentWillUpdate() {
+        let url = `http://localhost:3320/cartitem/${localStorage.getItem('User') ? JSON.parse(localStorage.getItem('User')).user_id : this.state.userid}`
+        axios.get(url)
+            .then((info) => {
+                console.log(info.data.length)
+                this.setState({
+                    cartItems: info.data.length
+                })
+            })
+            .catch((err) => {
+                console.log(err)
+            })
+    }
+
+    Logout() {
         localStorage.removeItem('User')
+        window.location.href('/')
     }
 
     render() {
-        // console.log(this.state.userData.first_name)
         return (
             <header>
                 <nav className="navbar navbar-expand-xl navbar-light fixed-top">
@@ -36,7 +41,7 @@ class Navbar extends Component {
                         <span className="navbar-toggler"></span>
                     </div>
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                        <div className="col-lg-5">
+                        <div className="col-lg-4">
                             <ul className="navbar-nav mr-auto">
                                 <li className="nav-item px-1">
                                     <Link className="nav-link" to="/Men">MEN</Link>
@@ -47,12 +52,6 @@ class Navbar extends Component {
                                 <li className="nav-item px-1">
                                     <a className="nav-link" href="1">ACCESSORIES</a>
                                 </li>
-                                {/* <li className="nav-item px-1">
-                        <a className="nav-link" href="1">BRANDS</a>
-                    </li> */}
-                                <li className="nav-item px-1">
-                                    <a className="nav-link" href="1">rsnc Letter</a>
-                                </li>
                             </ul>
                         </div>
                         <div className="col-lg-4">
@@ -61,18 +60,28 @@ class Navbar extends Component {
                                 <button className="btn-cst btn-outline-arsenic my-2 my-sm-0" type="submit"><i className="fas fa-search"></i></button>
                             </form>
                         </div>
-                        <div className="col-lg-3">
+                        <div className="col-lg-4 kanan">
                             <ul className="navbar-nav">
-                                <li className="nav-item mx-2 nav-link pointer" data-toggle="modal" data-target="#cart">
-                                    <span role="img" aria-label="1">🛒</span>Cart
+                                <li className="nav-item mx-2">
+                                    <Link className="nav-link" to="/Cart"><span role="img" aria-label="1">🛒</span><span class="badge">{this.state.cartItems}</span>Cart</Link>
                                 </li>
                                 <li className="nav-item mx-2">
-                                    <Link className="nav-link" to="/Register"><span role="img" aria-label="1">📝</span>Register</Link>
+                                    {
+                                        localStorage.getItem('User') ? '' :
+                                            <Link className="nav-link" to="/Register"><span role="img" aria-label="1">📝</span>Register</Link>
+                                    }
                                 </li>
                                 <li className="nav-item mx-2">
                                     {
                                         localStorage.getItem('User') ?
-                                            <div className="nav-link" to="/" >{this.state.userData.first_name}<Link to="/"><button onClick={this.Logout}>logout</button></Link></div>
+                                            <div className="nav-link dropdown">Hi, {JSON.parse(localStorage.getItem('User')).first_name}!
+                                                <div className="btn dropdown-toggle" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+                                                <div className="dropdown-menu dropdown-menu-right dropdown-menu-lg-left" aria-labelledby="dropdownMenuLink">
+                                                    <Link className="dropdown-item" to="/">Profil</Link>
+                                                    <div className="dropdown-divider"></div>
+                                                    <Link className="dropdown-item" to="/" onClick={this.Logout}>Log Out</Link>
+                                                </div>
+                                            </div>
                                             :
                                             <Link className="nav-link" to="/Login"><span role="img" aria-label="1">🔑</span>Login</Link>
                                     }
@@ -81,45 +90,6 @@ class Navbar extends Component {
                         </div>
                     </div>
                 </nav>
-                <div id="cart" className="modal fade" role="dialog">
-                    <div className="modal-dialog">
-                        <div className="modal-content">
-                            <div className="modal-header">
-                                <h5><span role="img" aria-label="1">🛒</span>Cart</h5>
-                                <button type="button" className="close" data-dismiss="modal"> &times;</button>
-                            </div>
-                            <div className="modal-body">
-                                <table className="table">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">Item</th>
-                                            <th scope="col">Name</th>
-                                            <th scope="col">Quantity</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>Mark</td>
-                                            <td>Otto</td>
-                                            <td>@mdo</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Jacob</td>
-                                            <td>Thornton</td>
-                                            <td>@fat</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Larry</td>
-                                            <td>the Bird</td>
-                                            <td>@twitter</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                                <button className="btn btn-success">Checkout</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </header>
         );
     }

@@ -11,7 +11,19 @@
     width: 100px
 }
 
-.btn-success {
+.btn-success-edited {
+    color: #fff;
+    background-color: #28a745;
+    border-color: #28a745;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    width: 350px;
+}
+
+.btn-danger-edited {
+    color: #fff;
+    background-color: #dc3545;
+    border-color: #dc3545;
     margin-top: 20px;
     margin-bottom: 10px;
     width: 350px;

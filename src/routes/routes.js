@@ -11,6 +11,7 @@ import Menbelts from '../page/men/categorymen/menbelts/menbelts'
 import Menbeltsdetails from '../page/men/categorymen/menbelts/menbeltdetails/menbeltdetails'
 import Menbags from '../page/men/categorymen/menbags/menbags'
 import Menbagdetails from '../page/men/categorymen/menbags/menbagdetails/menbagdetails'
+import Cart from '../page/cart/cart'
 
 export default class Routes extends Component {
     render () {
@@ -28,6 +29,7 @@ export default class Routes extends Component {
                 <Route exact path ='/Men' component={Men}/>
                 <Route exact path ='/Register' component={Register}/>
                 <Route exact path ='/Login' component={Login}/>
+                <Route exact path ='/Cart' component={Cart}/>
                 </Switch>
             </React.Fragment>
         )

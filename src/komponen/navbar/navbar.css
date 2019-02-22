@@ -105,4 +105,9 @@ nav:hover {
     background-color: rgb(245, 150, 60);
     border-color: rgb(245, 150, 60);
   }
+
+  .kanan {
+    display: flex;
+    justify-content: flex-end
+  }
 /* NAVBAR END */
