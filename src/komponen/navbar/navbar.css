@@ -110,4 +110,20 @@ nav:hover {
     display: flex;
     justify-content: flex-end
   }
+
+  .notification {
+    background-color: transparent;
+    position: relative;
+    display: inline-block;
+  }
+
+  .notification .badge {
+    position: absolute;
+    top: -8px;
+    right: 59px;
+    padding: 5px 10px;
+    border-radius: 45%;
+    background: red;
+    color: white;
+  }
 /* NAVBAR END */

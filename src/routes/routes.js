@@ -12,6 +12,8 @@ import Menbeltsdetails from '../page/men/categorymen/menbelts/menbeltdetails/men
 import Menbags from '../page/men/categorymen/menbags/menbags'
 import Menbagdetails from '../page/men/categorymen/menbags/menbagdetails/menbagdetails'
 import Cart from '../page/cart/cart'
+import Checkout from '../page/checkout/checkout'
+import ConfirmPayment from '../page/confirmpayment/confirmpayment'
 
 export default class Routes extends Component {
     render () {
@@ -30,6 +32,8 @@ export default class Routes extends Component {
                 <Route exact path ='/Register' component={Register}/>
                 <Route exact path ='/Login' component={Login}/>
                 <Route exact path ='/Cart' component={Cart}/>
+                <Route exact path ='/Checkout' component={Checkout}/>
+                <Route exact path ='/Checkout/Confirmation' component={ConfirmPayment}/>
                 </Switch>
             </React.Fragment>
         )

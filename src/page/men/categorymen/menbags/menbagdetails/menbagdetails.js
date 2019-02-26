@@ -107,19 +107,6 @@ export default class Menbagdetails extends Component {
                 console.log(err)
             })
     }
-    
-    // componentWillUpdate() {
-    //     if (localStorage.getItem('User')) {
-    //         let url = `http://localhost:3320/cartitem/${this.state.user_id}`
-    //         axios.get(url)
-    //             .then((info) => {
-    //                 console.log(info)
-    //             })
-    //             .catch((err) => {
-    //                 console.log(err)
-    //             })
-    //     } else {}
-    // }
 
     componentDidMount() {
         let product = this.props.match.params.profil

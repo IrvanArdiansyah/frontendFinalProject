@@ -1,13 +1,18 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 import './cart.css'
+import { Link } from 'react-router-dom'
+import SweetAlert from 'sweetalert2-react'
 
 export default class Cart extends Component {
     constructor() {
         super()
         this.state = {
             userid: '',
-            cartItem: []
+            cartItem: [],
+            cartCoba: {},
+            show: false,
+            message: ''
         }
     }
 
@@ -16,7 +21,8 @@ export default class Cart extends Component {
         axios.get(url)
             .then((info) => {
                 this.setState({
-                    cartItem: info.data
+                    cartItem: info.data,
+                    cartCoba: info.data[0]
                 })
             })
             .catch((err) => {
@@ -25,7 +31,12 @@ export default class Cart extends Component {
     }
 
     render() {
-        console.log(this.state)
+        console.log(this.state.cartCoba)
+        let total = this.state.cartItem.reduce(function (r, a) {
+            return r + a.total_price;
+        }, 0);
+        localStorage.setItem('TotalPrice', (total))
+
         let cart = this.state.cartItem.map((val, i) => {
             let idcart = val.cart_id
             let idproduct = val.product_id
@@ -34,6 +45,7 @@ export default class Cart extends Component {
             let quantity = val.quantity
             let price = val.price
             let subtotal = val.total_price
+
             return (
                 <tr key={i}>
                     <td><img src={img} alt={i} style={{ width: '35px', height: '35px' }} /></td>
@@ -50,7 +62,7 @@ export default class Cart extends Component {
                             .catch((err) => {
                                 console.log(err)
                             })
-                            window.location.href="/Cart"
+                        window.location.href = "/Cart"
                     }}>Remove</button></center></td>
                 </tr>
             )
@@ -67,14 +79,40 @@ export default class Cart extends Component {
                                 <th scope="col"><center>Quantity</center></th>
                                 <th scope="col"><center>Price</center></th>
                                 <th scope="col"><center>SubTotal</center></th>
-                                <th scope="col"><center>SubTotal</center></th>
+                                <th scope="col"><center></center></th>
                             </tr>
                         </thead>
                         <tbody>
                             {cart}
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td><center><b>Total Price</b></center></td>
+                                <td><center>Rp.{total.toLocaleString()}</center></td>
+                                <td></td>
+                            </tr>
                         </tbody>
                     </table>
-                    <button className="btn btn-success">Checkout</button>
+                    {
+                        this.state.cartCoba === undefined ? <button onClick={() => {
+                            this.setState({
+                                show: true,
+                                message: "You Don't Have Items To Order"
+                            })
+                        }} className="btn btn-success">Checkout</button>
+                        :  <Link to="/Checkout"><button className="btn btn-success">Checkout</button></Link>
+                            
+                    }
+                    {this.state.show ?
+                        <SweetAlert
+                            show={this.state.show}
+                            title="Alert"
+                            text={this.state.message}
+                            onConfirm={() => { this.setState({ show: false, message: '' }) }}
+                        /> :
+                        ''
+                    }
                 </div>
             </React.Fragment>
         )

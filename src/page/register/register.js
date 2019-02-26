@@ -2,8 +2,6 @@ import React, { Component } from 'react'
 import './register.css'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
-// import 'flatpickr/dist/themes/material_green.css'
-// import DatePicker from 'react-bootstrap-date-picker'
 
 export default class Register extends Component {
     constructor() {
@@ -77,12 +75,6 @@ export default class Register extends Component {
                                 </div>
                                 <div className="form-group">
                                     <label forhtml="inputBirthday">Birthday</label><br/>
-
-                                    {/* <Flatpickr
-                                        value={this.state.birthday}
-                                        // onChange={this.handleInput} 
-                                        name="birthday"/> */}
-
                                     <input name="birthday" type="date" onChange={this.handleInput}
                                     className="form-control" placeholder="Input Your Birthday" />
                                 </div>

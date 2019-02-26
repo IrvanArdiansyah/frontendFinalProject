@@ -10,11 +10,10 @@ class Navbar extends Component {
         cartItems: ''
     }
 
-    componentWillUpdate() {
+    componentDidMount() {
         let url = `http://localhost:3320/cartitem/${localStorage.getItem('User') ? JSON.parse(localStorage.getItem('User')).user_id : this.state.userid}`
         axios.get(url)
             .then((info) => {
-                console.log(info.data.length)
                 this.setState({
                     cartItems: info.data.length
                 })
@@ -62,8 +61,8 @@ class Navbar extends Component {
                         </div>
                         <div className="col-lg-4 kanan">
                             <ul className="navbar-nav">
-                                <li className="nav-item mx-2">
-                                    <Link className="nav-link" to="/Cart"><span role="img" aria-label="1">🛒</span><span class="badge">{this.state.cartItems}</span>Cart</Link>
+                                <li className="nav-item mx-2 notification">
+                                    <Link className="nav-link" to="/Cart"><span role="img" aria-label="1">🛒</span><span className="badge">{this.state.cartItems}</span>Cart</Link>
                                 </li>
                                 <li className="nav-item mx-2">
                                     {

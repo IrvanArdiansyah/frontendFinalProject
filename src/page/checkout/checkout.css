@@ -1,0 +1,25 @@
+.checkout {
+    display: -ms-flexbox !important;
+    display: flex !important;
+    -ms-flex-pack: center !important;
+    justify-content: center !important;
+}
+
+.box {
+    margin-top: 157px;
+    margin-bottom: 60px;
+    font-family: 'Didact Gothic', sans-serif;
+    width: 950px;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    -ms-flex-pack: center !important;
+    justify-content: center !important;
+}
+
+.shadow {
+    box-shadow: 0 3px 10px
+}
+
+.footer-register {
+    background-image: linear-gradient(180deg, rgba(131, 131, 131, 0.8), rgb(255, 255, 255))
+}
